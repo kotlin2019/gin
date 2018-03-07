@@ -41,11 +41,11 @@ $ go run example.go
 
 ## Benchmarks
 
-Gin uses a custom version of [HttpRouter](https://github.com/julienschmidt/httprouter)
+Gin 使用了定制的[HttpRouter](https://github.com/julienschmidt/httprouter)
 
-[See all benchmarks](/BENCHMARKS.md)
+[查看全部测试示例](/BENCHMARKS.md)
 
-Benchmark name                              | (1)        | (2)         | (3) 		    | (4)
+示例                                         | (1)        | (2)         | (3) 	   | (4)
 --------------------------------------------|-----------:|------------:|-----------:|---------:
 **BenchmarkGin_GithubAll**                  | **30000**  |  **48375**  |     **0**  |   **0**
 BenchmarkAce_GithubAll                      |   10000    |   134059    |   13792    |   167
@@ -75,80 +75,80 @@ BenchmarkTigerTonic_GithubAll               |    1000    |  1439483    |  239104
 BenchmarkTraffic_GithubAll                  |     100    | 11383067    | 2659329    | 21848
 BenchmarkVulcan_GithubAll                   |    5000    |   394253    |   19894    |   609
 
-- (1): Total Repetitions achieved in constant time, higher means more confident result
-- (2): Single Repetition Duration (ns/op), lower is better
-- (3): Heap Memory (B/op), lower is better
-- (4): Average Allocations per Repetition (allocs/op), lower is better
+- (1): 在规定的时间内重复请求, 数据越大意味着可靠性越好
+- (2): 单此请求响应时间, 数据越小越好
+- (3): 堆栈内存使用量 (B/op), 越小越好
+- (4): 每次请求内存分配大小,越小越好
 
-## Gin v1. stable
+## Gin v1稳定版
 
-- [x] Zero allocation router.
-- [x] Still the fastest http router and framework. From routing to writing.
-- [x] Complete suite of unit tests
-- [x] Battle tested
-- [x] API frozen, new releases will not break your code.
+- [x] 路由无内存损耗
+- [x] 依然是最快的路由和框架. 无论是路由性能还是读写性能
+- [x] 单元测试非常完善
+- [x] 经过非常完善的测试
+- [x] api接口非常稳定,不会因为接口不兼容导致你的代码出错
 
-## Start using it
+## 如何使用
 
-1. Download and install it:
+1. 下载并安装gin:
 
 ```sh
 $ go get github.com/gin-gonic/gin
 ```
 
-2. Import it in your code:
+2. 导入到你的代码:
 
 ```go
 import "github.com/gin-gonic/gin"
 ```
 
-3. (Optional) Import `net/http`. This is required for example if using constants such as `http.StatusOK`.
+3. (可选) 导入 `net/http` 包. 这个包可能会用上,比如你使用`http.StatusOK`状态.
 
 ```go
 import "net/http"
 ```
 
-### Use a vendor tool like [Govendor](https://github.com/kardianos/govendor)
+### 你也可以使用扩展工具包 [Govendor](https://github.com/kardianos/govendor)
 
-1. `go get` govendor
+1. 安装govendor工具
 
 ```sh
 $ go get github.com/kardianos/govendor
 ```
-2. Create your project folder and `cd` inside
+2. 创建 项目并进入项目目录下
 
 ```sh
 $ mkdir -p $GOPATH/src/github.com/myusername/project && cd "$_"
 ```
 
-3. Vendor init your project and add gin
+3. 使用工具包初始化项目并添加gin包
 
 ```sh
 $ govendor init
 $ govendor fetch github.com/gin-gonic/gin@v1.2
 ```
 
-4. Copy a starting template inside your project
+4. 将启动页模板复制到项目下
 
 ```sh
 $ curl https://raw.githubusercontent.com/gin-gonic/gin/master/examples/basic/main.go > main.go
 ```
 
-5. Run your project
+5. 运行项目
 
 ```sh
 $ go run main.go
 ```
 
-## Build with [jsoniter](https://github.com/json-iterator/go)
+## 支持 [jsoniter](https://github.com/json-iterator/go)
 
-Gin use `encoding/json` as default json package but you can change to [jsoniter](https://github.com/json-iterator/go) by build from other tags.
+Gin 使用 `encoding/json`包作为默认的json解析包,但是你也可以修改成 [jsoniter](https://github.com/json-iterator/go) by build from other tags.
 
 ```sh
 $ go build -tags=jsoniter .
 ```
 
-## API Examples
+## API 示例
 
 ### Using GET, POST, PUT, PATCH, DELETE and OPTIONS
 
