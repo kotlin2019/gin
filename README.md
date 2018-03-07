@@ -9,7 +9,7 @@
  [![Join the chat at https://gitter.im/gin-gonic/gin](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/gin-gonic/gin?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Open Source Helpers](https://www.codetriage.com/gin-gonic/gin/badges/users.svg)](https://www.codetriage.com/gin-gonic/gin)
 
-Gin is a web framework written in Go (Golang). It features a martini-like API with much better performance, up to 40 times faster thanks to [httprouter](https://github.com/julienschmidt/httprouter). If you need performance and good productivity, you will love Gin.
+Gin 是一款go语言web框架. 他提供martini风格的API,但是在各方面表现却更好,甚至路由响应速度是martini的40多倍,者主要归功于 [httprouter](https://github.com/julienschmidt/httprouter).如果你需要比较优秀的性能,你一定会喜欢上Gin的.
 
 ![Gin console logger](https://gin-gonic.github.io/gin/other/console.png)
 
